@@ -4,7 +4,6 @@
 - [Description](#description)
 - [Languages](#languages)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Description
 
@@ -14,6 +13,7 @@ The HackerRank FACEPrep FOP track provides a set of programming problems to help
 
 The solutions are available in the following programming languages:
 
+- [C](C)
 - [C++](C++)
 - [Python](Python)
 - [Java](Java)
