@@ -2,16 +2,12 @@
 
 int main() {
     int number;
-    int firstDigit, lastDigit, sum;
-
     scanf("%d", &number);
+    int firstDigit = number / 1000;
+    int lastDigit = number % 10;
+    int sum = firstDigit + lastDigit;
 
-    lastDigit = number % 10;
-    firstDigit = number / 1000;
-
-    sum = firstDigit + lastDigit;
-
-    printf("%d\n", sum);
+    printf("%d",sum);
 
     return 0;
 }
