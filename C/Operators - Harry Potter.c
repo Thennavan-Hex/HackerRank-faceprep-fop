@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    int number;
-    scanf("%d", &number);
-    int firstDigit = number / 1000;
-    int lastDigit = number % 10;
-    int sum = firstDigit + lastDigit;
-
-    printf("%d",sum);
+int main()
+{
+    int doorNumber, firstDigit, lastDigit, sum;
+    scanf("%d", &doorNumber);
+    doorNumber = abs(doorNumber);
+    lastDigit = doorNumber % 10;
+    firstDigit = doorNumber / 1000;
+    sum = firstDigit + lastDigit;
+    printf("%d", sum);
 
     return 0;
 }

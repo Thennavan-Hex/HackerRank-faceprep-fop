@@ -1,40 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    int prices[10];
-    int discounts[10];
-    int shippings[10];
-    int final_prices[10];
-    int lowest_price;
-    int i;
-    char str[3][30] = {"Flipkart", "Snapdeal", "Amazon"};
-
-    for (i = 0; i < 3; i++) {
-        scanf("%d", &prices[i]);
-        scanf("%d", &discounts[i]);
-        scanf("%d", &shippings[i]);
+    int f, fd, fs;
+    scanf("%d %d %d", &f, &fd, &fs);
+    int ft = f - ((f * fd) / 100) + fs;
+    int s, sd, ss;
+    scanf("%d %d %d", &s, &sd, &ss);
+    int st = s - ((s * sd) / 100) + ss;
+    int a, ad, as;
+    scanf("%d %d %d", &a, &ad, &as);
+    int at = a - ((a * ad) / 100) + as;
+    printf("In Flipkart: Rs.%d\n", ft);
+    printf("In Snapdeal: Rs.%d\n", st);
+    printf("In Amazon: Rs.%d\n", at);
+    if (ft < st && ft < at) {
+        printf("Choose Flipkart\n");
+    } else if (st < ft && st < at) {
+        printf("Choose Snapdeal\n");
+    } else if (at < ft && at < st) {
+        printf("Choose Amazon\n");
+    } else {
+        printf("Choose Flipkart\n");
     }
-    for (i = 0; i < 3; i++) {
-        final_prices[i] = prices[i] - (prices[i] * discounts[i] / 100) + shippings[i];
-    }
-
-    for (i = 0; i < 3; i++) {
-        printf("In %s: Rs.%d\n",str[i],  final_prices[i]);
-    }
-
-    lowest_price = final_prices[0];
-    for (i = 1; i < 3; i++) {
-        if (final_prices[i] < lowest_price) {
-            lowest_price = final_prices[i];
-        }
-    }
-
-    for (i = 0; i < 3; i++) {
-        if (lowest_price == final_prices[i]) {
-            printf("Choose %s\n",str[i]);
-            break;
-        }
-    }
-
     return 0;
 }
